@@ -9,12 +9,7 @@ SRC_C += $(BERRY_SRC_C)
 
 CPPDEFINES += -DOBK_VARIANT=$(OBK_VARIANT)
 
-ifeq ($(TARGET_PLATFORM),bk7231n)
-
 CFG_USE_MQTT_TLS ?= 1
-
-
-ifeq ($(CFG_USE_MQTT_TLS),1)
 
 MBEDTLS_DIR = $(TOP_DIR)/apps/$(APP_BIN_NAME)/output/mbedtls-2.28.5
 INCLUDES := -I$(MBEDTLS_DIR)/include -I$(TOP_DIR)/apps/$(APP_BIN_NAME)/src $(INCLUDES)
@@ -76,6 +71,3 @@ SRC_C += ${MBEDTLS_DIR}/library/arc4.c
 SRC_C += ${MBEDTLS_DIR}/library/blowfish.c
 SRC_C += ${MBEDTLS_DIR}/library/camellia.c
 SRC_C += ${MBEDTLS_DIR}/library/ssl_cli.c
-
-endif   #ifeq ($(CFG_USE_MQTT_TLS),1)
-endif   #ifeq ($(TARGET_PLATFORM),bk7231n)
