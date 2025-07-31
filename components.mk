@@ -13,6 +13,7 @@ ifeq ($(TARGET_PLATFORM),bk7231n)
 
 CFG_USE_MQTT_TLS ?= 1
 
+
 ifeq ($(CFG_USE_MQTT_TLS),1)
 
 MBEDTLS_DIR = $(TOP_DIR)/apps/$(APP_BIN_NAME)/output/mbedtls-2.28.5
